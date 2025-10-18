@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Anagram Checker</title>
+</head>
+<body>
+  <h3>Anagram Checker</h3>
+  <p>Enter two words:</p>
+  Word 1: <input type="text" id="word1" />
+  Word 2: <input type="text" id="word2" />
+  <button onclick="Anagram()">Check</button>
+
+  <p id="result"></p>
+
+  <script>
+    function Anagram() {
+      var str1 = document.getElementById("word1").value.toLowerCase();
+      var str2 = document.getElementById("word2").value.toLowerCase();
+
+      str1 = str1.replace(/[^a-z]/g, "");
+      str2 = str2.replace(/[^a-z]/g, "");
+
+      var sorted1 = str1.split("").sort().join("");
+      var sorted2 = str2.split("").sort().join("");
+
+      var isAnagram = sorted1 === sorted2;
+
+      document.getElementById("result").textContent = isAnagram ? "True" : "False";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Word Pattern</title>
+</head>
+<body>
+  <h3>Word Pattern Generator</h3>
+  <p>Enter a word:</p>
+  <input type="text" id="word" />
+  <button onclick="Pattern()">Show Pattern</button>
+
+  <p id="result"></p>
+
+  <script>
+    function Pattern() {
+      var word = document.getElementById("word").value;
+      var output = "";
+      for (var i = 1; i <= word.length; i++) {
+        output += word.substring(0, i) + "<br>";
+      }
+      for (var j = 1; j < word.length; j++) {
+        output += word.substring(j) + "<br>";
+      }
+
+      document.getElementById("result").innerHTML = output;
+    }
+  </script>
+</body>
+</html>

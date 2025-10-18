@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RGB to HEX Converter</title>
+</head>
+<body>
+  <h3>RGB to HEX Color Code</h3>
+  <p>Enter RGB values:</p>
+
+  R: <input type="number" id="r">
+  G: <input type="number" id="g">
+  B: <input type="number" id="b">
+  <button onclick="Hex()">Convert</button>
+
+  <p id="result"></p>
+
+  <script>
+    function Hex() {
+      var r = parseInt(document.getElementById("r").value);
+      var g = parseInt(document.getElementById("g").value);
+      var b = parseInt(document.getElementById("b").value);
+
+      var hexR = r.toString(16).toUpperCase().padStart(2, '0');
+      var hexG = g.toString(16).toUpperCase().padStart(2, '0');
+      var hexB = b.toString(16).toUpperCase().padStart(2, '0');
+
+      var hexCode = "#" + hexR + hexG + hexB;
+
+      document.getElementById("result").textContent = "Hex Code: " + hexCode;
+    }
+  </script>
+</body>
+</html>
