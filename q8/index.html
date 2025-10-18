@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product of 3 Numbers</title>
+</head>
+
+<body>
+    <h2>Product of 3 Numbers</h2>
+    <input type="text" id="numb" placeholder="Enter numbers">
+    <button onclick="product()">Product</button>
+    <p id="result"></p>
+
+    <script>
+        function product() {
+            var input = document.getElementById("numb").value;
+            var numb = input.split(" ").map(function (x) {
+                return Number(x.trim());
+            });
+            numb.sort(function (a, b) {
+                return a - b;
+            });
+            var opt2 = numb[0] * numb[1] * numb[2];
+            var opt1 = numb[numb.length - 1] * numb[numb.length - 2] * numb[numb.length - 3];
+            var max = Math.max(opt1, opt2);
+            document.getElementById("result").textContent = "max product:" + max;
+
+        }
+    </script>
+</body>
+
+</html>
